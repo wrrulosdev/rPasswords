@@ -21,7 +21,6 @@ class LoginForm(ft.Container):
         file_picker: ft.FilePicker = ft.FilePicker(on_result=LoginForm.on_dialog_result)
         self.page.overlay.append(file_picker)
         self.page.update()
-        
         return ft.Container(
             content=ft.Column(
                 controls=[
@@ -38,10 +37,19 @@ class LoginForm(ft.Container):
                                     ft.dropdown.Option("Blue"),
                                 ],
                             ),
-                            ft.ElevatedButton(
-                                text='New', 
+                            ft.IconButton(
+                                icon=ft.Icons.ADD, 
                                 height=50,
                                 width=50,
+                                tooltip='Add new DB',
+                                on_click=lambda _: file_picker.pick_files(allow_multiple=False)
+                            ),
+                            ft.IconButton(
+                                icon=ft.Icons.DELETE,
+                                icon_color=ft.Colors.RED_300,
+                                height=50,
+                                width=50,
+                                tooltip='Delete DB',
                                 on_click=lambda _: file_picker.pick_files(allow_multiple=False)
                             ),
                         ],
