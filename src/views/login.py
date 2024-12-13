@@ -12,7 +12,8 @@ class LoginView:
             ft.Column(
                 controls=[
                     Logo().build(),
-                    LoginForm(page=self.page).build()
+                    LoginForm(page=self.page).build(),
+                    ft.Text(value='github.com/wrrulosdev/rPasswords', size=12, color=ft.Colors.GREY_500)
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
